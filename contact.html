@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Developer</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact-container {
+            background: #fff;
+            padding: 40px 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            max-width: 420px;
+            width: 100%;
+            animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 28px;
+            color: #2575fc;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #444;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1.5px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #f9f9f9;
+            transition: border-color 0.3s;
+        }
+        input:focus, textarea:focus {
+            border-color: #2575fc;
+            outline: none;
+        }
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37,117,252,0.08);
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .success, .error {
+            text-align: center;
+            margin-bottom: 16px;
+            font-size: 1em;
+            animation: fadeIn 0.6s;
+        }
+        .success { color: #27ae60; }
+        .error { color: #e74c3c; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Floating label animation */
+        .form-group {
+            position: relative;
+            margin-bottom: 22px;
+        }
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -14px;
+            left: 8px;
+            font-size: 0.92em;
+            color: #2575fc;
+            background: #fff;
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+        .form-group label {
+            position: absolute;
+            left: 14px;
+            top: 14px;
+            background: transparent;
+            padding: 0 4px;
+            color: #888;
+            font-size: 1em;
+            pointer-events: none;
+            transition: 0.2s;
+        }
+        .form-group input, .form-group textarea {
+            margin-bottom: 0;
+        }
+        @media (max-width: 500px) {
+            .contact-container { padding: 24px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <h2>Contact Developer</h2>
+        <div id="response"></div>
+        <form id="contactForm" autocomplete="off">
+            <div class="form-group">
+                <input type="text" id="name" name="name" required placeholder=" " />
+                <label for="name">Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" required placeholder=" " />
+                <label for="email">Email</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="subject" name="subject" required placeholder=" " />
+                <label for="subject">Subject</label>
+            </div>
+            <div class="form-group">
+                <textarea id="description" name="description" required placeholder=" "></textarea>
+                <label for="description">Description</label>
+            </div>
+            <button type="submit" id="submitBtn">Send Message</button>
+        </form>
+    </div>
+    <script>
+        const TOKEN = "7091061445:AAGQfRijga7CV8O8LKZnHZjPrOPXYMR1yus"; // <-- Replace with your bot token
+        const CHAT_ID = "8043446963"; // <-- Replace with your chat ID
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Sending...";
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const description = document.getElementById('description').value;
+
+            const message = 
+                `<b>New Contact Form Submission</b>\n` +
+                `<b>Name:</b> ${name}\n` +
+                `<b>Email:</b> ${email}\n` +
+                `<b>Subject:</b> ${subject}\n` +
+                `<b>Description:</b>\n${description}`;
+
+            fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: message,
+                    parse_mode: "HTML"
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.ok) {
+                    document.getElementById('response').innerHTML = '<div class="success">Message sent! Redirecting...</div>';
+                    document.getElementById('contactForm').reset();
+                    setTimeout(() => {
+                        window.location.href = "thanks.html";
+                    }, 1500); // 1.5 seconds delay before redirect
+                } else {
+                    document.getElementById('response').innerHTML = '<div class="error">Failed to send message. Please try again.</div>';
+                }
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Send Message";
+            })
+            .catch(error => {
+                document.getElementById('response').innerHTML = '<div class="error">Error sending message. Please try again.</div>';
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Send Message";
+            });
+        });
+    </script>
+</body>
+</html>
