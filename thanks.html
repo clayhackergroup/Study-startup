@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank You!</title>
+    <meta http-equiv="refresh" content="5;url=dashboard.html">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:700,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #2575fc 0%, #6a11cb 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+        .thanks-container {
+            background: #fff;
+            padding: 48px 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            animation: fadeInDown 1s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .thanks-icon {
+            font-size: 60px;
+            color: #27ae60;
+            margin-bottom: 18px;
+            animation: popIn 0.7s;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.6); opacity: 0; }
+            70% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        h1 {
+            color: #2575fc;
+            font-size: 2.1em;
+            margin: 0 0 14px 0;
+            font-weight: 700;
+        }
+        p {
+            color: #444;
+            font-size: 1.1em;
+            margin-bottom: 32px;
+        }
+        .home-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.08em;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 8px rgba(37,117,252,0.08);
+        }
+        .home-btn:hover {
+            background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+            transform: translateY(-2px) scale(1.04);
+        }
+        .redirect-msg {
+            margin-top: 18px;
+            color: #888;
+            font-size: 0.98em;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 500px) {
+            .thanks-container { padding: 28px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="thanks-container">
+        <div class="thanks-icon">🎉</div>
+        <h1>Thank You!</h1>
+        <p>
+            Thank you for contacting the developers.<br>
+            We have received your message and will reply to you soon!
+        </p>
+        <a href="dashboard.html" class="home-btn">Back to Home</a>
+        <div class="redirect-msg">
+            You will be redirected to your dashboard in <span id="countdown">5</span> seconds.
+        </div>
+    </div>
+    <script>
+        // Countdown timer for redirect message
+        let seconds = 5;
+        const countdownEl = document.getElementById('countdown');
+        const interval = setInterval(() => {
+            seconds--;
+            if (seconds > 0) {
+                countdownEl.textContent = seconds;
+            } else {
+                clearInterval(interval);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
