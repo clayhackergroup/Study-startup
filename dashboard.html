@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Study Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; min-height: 100vh; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #5a67d8 0%, #9f7aea 100%);
+      color: #f0f0f0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease-in;
+      position: relative;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Particle background */
+    #particles {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    /* Header */
+    header {
+      background: rgba(40, 30, 80, 0.15);
+      padding: 38px 20px 30px 20px;
+      text-align: center;
+      backdrop-filter: blur(14px);
+      border-bottom: 2px solid rgba(255,255,255,0.13);
+      border-radius: 0 0 32px 32px;
+      box-shadow: 0 8px 32px rgba(80,30,120,0.13);
+      position: relative;
+      z-index: 2;
+      animation: headerFadeIn 1.5s cubic-bezier(.64,.09,.08,1) forwards;
+    }
+    @keyframes headerFadeIn {
+      0% {opacity: 0; transform: translateY(-40px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 2px 14px #6b21a8, 0 1px 0 #0002;
+      transition: color 0.3s;
+    }
+    header p {
+      font-size: 1.15rem;
+      margin-top: 14px;
+      color: #e0e0e0;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 8px #6b21a8;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 34px 15px 28px 15px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+      margin: 30px auto 0 auto;
+      max-width: 1080px;
+      position: relative;
+      z-index: 2;
+      animation: navPopIn 1.2s cubic-bezier(.64,.09,.08,1) forwards;
+    }
+    @keyframes navPopIn {
+      0% {opacity: 0; transform: scale(0.95);}
+      100% {opacity: 1; transform: scale(1);}
+    }
+    nav button {
+      background: linear-gradient(90deg, #ff758c, #ff7eb3 90%);
+      color: #222;
+      border: none;
+      padding: 16px 32px;
+      font-weight: 700;
+      font-size: 1.13rem;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.33s cubic-bezier(.64,.09,.08,1);
+      box-shadow: 0 6px 30px rgba(0,0,0,0.16);
+      letter-spacing: 0.8px;
+      position: relative;
+      overflow: hidden;
+      outline: none;
+      margin: 5px;
+      animation: buttonPopIn 0.7s cubic-bezier(.64,.09,.08,1) backwards;
+    }
+    nav button:nth-child(1) { animation-delay: 0.05s; }
+    nav button:nth-child(2) { animation-delay: 0.10s; }
+    nav button:nth-child(3) { animation-delay: 0.15s; }
+    nav button:nth-child(4) { animation-delay: 0.20s; }
+    nav button:nth-child(5) { animation-delay: 0.25s; }
+    nav button:nth-child(6) { animation-delay: 0.30s; }
+    nav button:nth-child(7) { animation-delay: 0.35s; }
+    nav button:nth-child(8) { animation-delay: 0.40s; }
+    nav button:nth-child(9) { animation-delay: 0.45s; }
+    nav button:nth-child(10) { animation-delay: 0.50s; }
+    nav button:nth-child(11) { animation-delay: 0.55s; }
+    nav button:nth-child(12) { animation-delay: 0.60s; }
+    nav button:nth-child(13) { animation-delay: 0.65s; }
+    nav button:nth-child(14) { animation-delay: 0.70s; }
+    @keyframes buttonPopIn {
+      0% {opacity: 0; transform: scale(0.7);}
+      100% {opacity: 1; transform: scale(1);}
+    }
+    nav button:hover, nav button:focus {
+      transform: scale(1.13) rotate(-2deg);
+      background: linear-gradient(90deg, #a18cd1, #fbc2eb 90%);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.33);
+      color: #111;
+      outline: none;
+    }
+    nav button::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 0; height: 0;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      transform: translate(-50%,-50%);
+      transition: width 0.4s, height 0.4s;
+      z-index: 1;
+    }
+    nav button:active::after {
+      width: 180%;
+      height: 180%;
+      transition: 0s;
+    }
+
+    /* Content Card */
+    .content {
+      max-width: 900px;
+      margin: 38px auto 0 auto;
+      padding: 48px 38px;
+      background: rgba(255, 255, 255, 0.13);
+      border-radius: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.36);
+      position: relative;
+      z-index: 2;
+      animation: contentSlideUp 1.5s cubic-bezier(.64,.09,.08,1) forwards;
+    }
+    @keyframes contentSlideUp {
+      0% {opacity: 0; transform: translateY(60px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    .content h2 {
+      font-size: 2.6rem;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      margin-bottom: 24px;
+      text-shadow: 0 3px 16px #6b21a8, 0 1px 0 #0002;
+    }
+    .content p {
+      font-size: 1.22rem;
+      line-height: 1.85;
+      color: #eae6f7;
+      margin-bottom: 18px;
+      text-shadow: 0 1px 6px #6b21a844;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 900px) {
+      .content { padding: 32px 16px; }
+      nav { padding: 24px 5px 18px 5px; }
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 5px 10px 5px;
+      }
+      nav button {
+        width: 95%;
+        padding: 16px 0;
+        font-size: 1.18rem;
+        border-radius: 18px;
+      }
+      header h1 { font-size: 2rem; }
+      .content { padding: 18px 6px; }
+      .content h2 { font-size: 1.4rem; }
+      .content p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <header>
+    <h1>Welcome, <span id="username">User</span> 👋</h1>
+    <p>Glad to have you at Study Vibe</p>
+  </header>
+
+  <nav>
+    <button onclick="goTo('rooms/9th.html')">9th</button>
+    <button onclick="goTo('rooms/10th.html')">10th</button>
+    <button onclick="goTo('rooms/11th.html')">11th</button>
+    <button onclick="goTo('rooms/12th.html')">12th</button>
+    <button onclick="goTo('rooms/bca.html')">BCA</button>
+    <button onclick="goTo('rooms/btech.html')">BTech</button>
+    <button onclick="goTo('rooms/bsc-agree.html')">BSc Agri</button>
+    <button onclick="goTo('rooms/neet.html')">NEET</button>
+    <button onclick="goTo('rooms/jee.html')">JEE</button>
+    <button onclick="goTo('rooms/iit.html')">IIT</button>
+    <button onclick="goTo('rooms/programmers.html')">Programmers</button>
+    <button onclick="goTo('rooms/hackers.html')">Hackers</button>
+    <button onclick="goTo('rooms/video-editors.html')">Video Editors</button>
+    <button onclick="goTo('rooms/gamers.html')">Gamers</button>
+  </nav>
+
+  <div class="content">
+    <h2>🌟 About Study Vibe</h2>
+    <p>
+      Study Vibe is a dynamic online platform where learners from all backgrounds come together to grow. Whether you're preparing for academic exams like NEET, JEE, or pursuing careers in programming, video editing, or game development — Study Vibe connects you to people who share your goals.
+    </p>
+    <p>
+      🎯 Focused study groups<br>
+      💬 Real-time discussions & Q&A<br>
+      🧠 Motivated learning environments<br>
+      🧑‍💻 Join groups by subject, grade, or interest<br>
+      🚀 Stay consistent, accountable, and inspired!
+    </p>
+    <p>
+      Join us in building a vibrant, connected world of learners — one study session at a time.
+    </p>
+  </div>
+
+  <script>
+    // User Data Validation
+    const requiredKeys = ["name", "lastname", "number", "email", "age", "gender"];
+    const missingData = requiredKeys.some(key => !localStorage.getItem(key));
+    if (missingData) {
+      window.location.href = "regester.html";
+    } else {
+      const userName = localStorage.getItem("name");
+      document.getElementById("username").innerText = userName;
+    }
+    function goTo(page) {
+      window.location.href = page;
+    }
+
+    // Particle Background Animation
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    function createParticles() {
+      particles = [];
+      const amount = Math.floor(window.innerWidth / 14);
+      for (let i = 0; i < amount; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2.2 + 0.6,
+          d: Math.random() * 0.6 + 0.2,
+          dx: (Math.random() - 0.5) * 0.6,
+          dy: (Math.random() - 0.5) * 0.6,
+          color: `rgba(${120+Math.random()*80},${100+Math.random()*100},${200+Math.random()*55},0.8)`
+        });
+      }
+    }
+    createParticles();
+    window.addEventListener('resize', createParticles);
+
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, false);
+        ctx.fillStyle = p.color;
+        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      }
+      requestAnimationFrame(drawParticles);
+    }
+    drawParticles();
+  </script>
+
+</body>
+</html>

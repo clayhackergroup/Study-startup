@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NEET Prep Hub - Study Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #56ab2f, #a8e063);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      animation: slideDown 1s ease-in-out;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+    .room-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .room-card {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 30px;
+      border-radius: 16px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: zoomIn 1s ease forwards;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .room-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+    }
+    .room-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+    .room-card p {
+      font-size: 1rem;
+      color: #e9f5db;
+      margin-bottom: 20px;
+    }
+    .room-card a {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(to right, #11998e, #38ef7d);
+      padding: 12px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .room-card a:hover {
+      background: linear-gradient(to right, #38ef7d, #11998e);
+    }
+  </style>
+</head>
+<body>
+  <h1>NEET Prep Hub</h1>
+  <p>Collaborate and prepare with peers for NEET exams. Share tips, doubts, and study materials.</p>
+
+  <div class="room-container">
+    <div class="room-card">
+      <h2>Biology Focus</h2>
+      <p>Discuss important biology concepts and exam-focused topics.</p>
+      <a href="https://meet.jit.si/neet1gyef7t59">Join Room</a>
+    </div>
+
+    <div class="room-card">
+      <h2>Physics & Chemistry</h2>
+      <p>Sharpen your physics and chemistry knowledge for NEET success.</p>
+      <a href="https://meet.jit.si/neet2yubt87rtfe87
+">Join Room</a>
+    </div>
+  </div>
+</body>
+</html>

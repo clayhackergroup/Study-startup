@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>9th Grade Chat Rooms - Study Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      text-align: center;
+      max-width: 600px;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    .room-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .room-card {
+      background: #ffffff10;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 30px;
+      border-radius: 16px;
+      width: 260px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      animation: zoomIn 1s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .room-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    .room-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .room-card p {
+      font-size: 1rem;
+      color: #eee;
+      margin-bottom: 20px;
+    }
+
+    .room-card a {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      padding: 12px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .room-card a:hover {
+      background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>9th Grade Chat Rooms</h1>
+  <p>Select your preferred board and join the chat room with fellow students!</p>
+
+  <div class="room-container">
+    <div class="room-card">
+      <h2>CBSE Pattern</h2>
+      <p>Chat with CBSE students, share notes & prepare together!</p>
+      <a href="https://meet.jit.si/Cbse9thhhhsisi#jwt=%22eyJhbGciOiJSUzI1NiIsImtpZCI6IjY3ZDhjZWU0ZTYwYmYwMzYxNmM1ODg4NTJiMjA5MTZkNjRjMzRmYmEiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiYnl0ZXdlYXZlIHN0dWRpbyIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKUVNyWXJXekRxdFRMRHJhVml2WGdtcHNBWVAxdFlDX3NSVklYdHpDNVIyLTQ4VEpRPXM5Ni1jIiwiaXNzIjoiaHR0cHM6Ly9zZWN1cmV0b2tlbi5nb29nbGUuY29tL21lZXQtaml0LXNpLTY2Y2JkIiwiYXVkIjoibWVldC1qaXQtc2ktNjZjYmQiLCJhdXRoX3RpbWUiOjE3NDc4OTgyMDAsInVzZXJfaWQiOiJaSFNCUGZmenlJY21ReTVGSDN3ZFdiSUpDNGEyIiwic3ViIjoiWkhTQlBmZnp5SWNtUXk1Rkgzd2RXYklKQzRhMiIsImlhdCI6MTc0NzkyMjg5NywiZXhwIjoxNzQ3OTI2NDk3LCJlbWFpbCI6ImluZm8uYnl0ZXdlYXZlc3R1ZGlvLmFwcEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJnb29nbGUuY29tIjpbIjEwOTQ1NDA2NDMyNTI4NTY5NTEwMiJdLCJlbWFpbCI6WyJpbmZvLmJ5dGV3ZWF2ZXN0dWRpby5hcHBAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoiZ29vZ2xlLmNvbSJ9fQ.hqA9h9YurM-Fh5AR68yzuZRPcrLGI-syVk95DayoqiFxgKtpjKUXDdmMmePvtWIaOGbq0KHfsJeQQeqCcsbKL3R07LGGuy7o8LzWYHTEz7Lf_AksFLdl4-GmmOUPZDfkJtpmEXEKR-BomjRCgJxIl1_IEjqQOQkiTTxt8vQLsGhFE8OXBoU9vZqs3GxjmzRzWS851J8VUz6f-D6iXZc5MZyhNtLkMy3XDTPX97cVpQ9lTKhqmxG-T4eXHpXnMEz9qqgyKCy64h2ozUr24WleRZ0GWVD4cYi-qzEySVQGv1aUNU8GyupzgFhXHQjBKbpOAGGDHtqVhZwGa3HeXukQDA%22">Join CBSE Chat</a>
+    </div>
+
+    <div class="room-card">
+      <h2>Maharashtra Board</h2>
+      <p>Discuss topics, exam prep, and share knowledge.</p>
+      <a href="https://meet.jit.si/Boardsmaharashtra9thjaja">Join Maharashtra Chat</a>
+    </div>
+  </div>
+
+</body>
+</html>

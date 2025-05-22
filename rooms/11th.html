@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>11th Grade Chat Rooms - Study Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      text-align: center;
+      max-width: 600px;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    .room-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .room-card {
+      background: #ffffff10;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 30px;
+      border-radius: 16px;
+      width: 260px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      animation: zoomIn 1s ease;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .room-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    .room-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .room-card p {
+      font-size: 1rem;
+      color: #eee;
+      margin-bottom: 20px;
+    }
+
+    .room-card a {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      padding: 12px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .room-card a:hover {
+      background: linear-gradient(45deg, #764ba2, #667eea);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>11th Grade Chat Rooms</h1>
+  <p>Meet and chat with 11th-grade students from your board and collaborate easily!</p>
+
+  <div class="room-container">
+    <div class="room-card">
+      <h2>CBSE Pattern</h2>
+      <p>Join the CBSE group to share notes, tips, and discuss subjects.</p>
+      <a href="https://meet.jit.si/11thcbseclass">Join CBSE Chat</a>
+    </div>
+
+    <div class="room-card">
+      <h2>Maharashtra Board</h2>
+      <p>Connect with students in Maharashtra board for support and study.</p>
+      <a href="https://meet.jit.si/11thboardclass">Join Maharashtra Chat</a>
+    </div>
+  </div>
+
+</body>
+</html>

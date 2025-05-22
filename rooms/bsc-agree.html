@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>BSc Agriculture Hub - Study Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      animation: slideDown 1s ease forwards;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      max-width: 700px;
+      color: #d0f0fd;
+      font-style: italic;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .room-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      max-width: 900px;
+    }
+    .room-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 28px 30px;
+      width: 280px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      backdrop-filter: blur(12px);
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: zoomIn 1s ease forwards;
+      border: 2px solid transparent;
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .room-card:hover {
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+      border-color: #00d2ff;
+      background: rgba(255, 255, 255, 0.3);
+    }
+    .room-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #f0f9ff;
+      text-shadow: 0 0 4px #00d2ff;
+    }
+    .room-card p {
+      font-size: 1rem;
+      margin-bottom: 22px;
+      color: #d0e9ff;
+      min-height: 60px;
+    }
+    .room-card a {
+      display: inline-block;
+      text-decoration: none;
+      color: #007acc;
+      background: #e0f7ff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(0, 122, 204, 0.5);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .room-card a:hover {
+      background: #007acc;
+      color: #e0f7ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>BSc Agriculture Hub</h1>
+  <p>Join the community of agriculture enthusiasts to share knowledge, solve queries, and collaborate on projects.</p>
+
+  <div class="room-container">
+    <div class="room-card">
+      <h2>Crop Science</h2>
+      <p>Discuss crop cultivation, pest management, and modern farming techniques.</p>
+      <a href="https://meet.jit.si/bscagree1wvfgefyugtegfwefr">Join Room</a>
+    </div>
+
+    <div class="room-card">
+      <h2>Soil & Water Conservation</h2>
+      <p>Explore sustainable practices for soil health and water resource management.</p>
+      <a href="https://meet.jit.si/bscagree2hkjudwefiuygdovy">Join Room</a>
+    </div>
+  </div>
+
+</body>
+</html>

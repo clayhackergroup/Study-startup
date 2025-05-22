@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Video Editors Hub - Study Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #232526, #1c1c1c);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 1.3s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      animation: slideDown 1s ease forwards;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0;}
+      to { transform: translateY(0); opacity: 1;}
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 35px;
+      max-width: 650px;
+      color: #ccc;
+    }
+    .room-container {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 960px;
+      width: 90%;
+    }
+    .room-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 28px;
+      border-radius: 18px;
+      width: 280px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(14px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      cursor: pointer;
+      animation: zoomIn 1s ease forwards;
+    }
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.85);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    .room-card:hover {
+      transform: translateY(-14px);
+      box-shadow: 0 20px 38px rgba(0,0,0,0.7);
+      background: rgba(255, 255, 255, 0.15);
+    }
+    .room-card h2 {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+      color: #ff7f50;
+    }
+    .room-card p {
+      font-size: 1rem;
+      margin-bottom: 22px;
+      color: #f0e6de;
+      min-height: 62px;
+    }
+    .room-card a {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(90deg, #ff7f50, #ff4500);
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 69, 0, 0.6);
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+    .room-card a:hover {
+      background: linear-gradient(90deg, #ff4500, #ff7f50);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Video Editors Hub</h1>
+  <p>Connect with fellow editors, share tips and tricks, and discuss your favorite editing tools.</p>
+
+  <div class="room-container">
+    <div class="room-card">
+      <h2>Adobe Premiere Pro</h2>
+      <p>Discuss techniques, effects, and workflow for Premiere Pro users.</p>
+      <a href="https://meet.jit.si/videoeditors1it7gwfdo87fb">Join Room</a>
+    </div>
+
+    <div class="room-card">
+      <h2>Final Cut Pro</h2>
+      <p>Share tips and collaborate with Final Cut Pro enthusiasts.</p>
+      <a href="https://meet.jit.si/2trb8ny5b24b9">Join Room</a>
+    </div>
+  </div>
+
+</body>
+</html>

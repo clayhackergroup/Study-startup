@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JEE Hub - Study Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+
+    .room-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .room-card {
+      background: #ffffff0d;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 30px;
+      border-radius: 16px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: zoomIn 0.9s ease forwards;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .room-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+    }
+
+    .room-card h2 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .room-card p {
+      font-size: 1rem;
+      color: #e0e0e0;
+      margin-bottom: 20px;
+    }
+
+    .room-card a {
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(to right, #56ccf2, #2f80ed);
+      padding: 12px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .room-card a:hover {
+      background: linear-gradient(to right, #2f80ed, #56ccf2);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JEE Hub</h1>
+  <p>Prepare smarter, not harder. Chat with peers and boost your JEE Mains and Advanced journey.</p>
+
+  <div class="room-container">
+    <div class="room-card">
+      <h2>JEE Mains</h2>
+      <p>Discuss patterns, practice questions, and tricks for Mains.</p>
+      <a href="https://meet.jit.si/jee1iy7gbqedt87">Join Room</a>
+    </div>
+
+    <div class="room-card">
+      <h2>JEE Advanced</h2>
+      <p>Dive deeper into concepts and challenge yourself with Advanced level prep.</p>
+      <a href="https://meet.jit.si/jee2gdwfutbfe86">Join Room</a>
+    </div>
+  </div>
+
+</body>
+</html>

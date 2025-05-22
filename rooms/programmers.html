@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Programmers Hub - Study Vibe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Consolas', 'Courier New', monospace, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      animation: slideDown 1s ease-in-out;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+      font-style: italic;
+      color: #a0c4ff;
+    }
+    .room-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      max-width: 900px;
+    }
+    .room-card {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 30px;
+      border-radius: 16px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: zoomIn 1s ease forwards;
+      cursor: pointer;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .room-card:hover {
+      transform: translateY(-12px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .room-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #90caf9;
+    }
+    .room-card p {
+      font-size: 1rem;
+      color: #cfd8dc;
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+    .room-card a {
+      text-decoration: none;
+      color: #0d47a1;
+      background: #bbdefb;
+      padding: 12px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(11, 63, 114, 0.7);
+      transition: background 0.3s, color 0.3s;
+    }
+    .room-card a:hover {
+      background: #0d47a1;
+      color: #bbdefb;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Programmers Hub</h1>
+  <p>Connect, code, and collaborate with fellow programmers to level up your skills.</p>
+
+  <div class="room-container">
+    <div class="room-card">
+      <h2>Web Development</h2>
+      <p>Discuss HTML, CSS, JavaScript, frameworks, and frontend/backend dev.</p>
+      <a href="https://meet.jit.si/porogrammers1uywfe87t7568">Join Room</a>
+    </div>
+
+    <div class="room-card">
+      <h2>Algorithms & Data Structures</h2>
+      <p>Sharpen your problem-solving skills and prepare for coding interviews.</p>
+      <a href="https://meet.jit.si/programmers2hfedwtgyuftgu">Join Room</a>
+    </div>
+  </div>
+
+</body>
+</html>
